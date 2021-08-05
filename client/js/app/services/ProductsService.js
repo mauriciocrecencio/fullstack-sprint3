@@ -6,14 +6,10 @@ class ProductsService {
   allProducts() {
     return this._http
       .get("api/products")
-      .then((products) => {
-        console.log(products);
-        return products.map(
-          (product) => new Product(product.image, product.description, product.value)
-        );
-      })
+      .then((products) =>
+        products.map((product) => new Product(product.image, product.description, product.value))
+      )
       .catch((erro) => {
-        console.log(erro);
         throw new Error("Não foi possível obter os produtos");
       });
   }

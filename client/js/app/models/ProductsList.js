@@ -1,5 +1,4 @@
 class ProductsList {
-  // TODO: implementar
   constructor() {
     this._products = [];
     this._filteredProducts = [];

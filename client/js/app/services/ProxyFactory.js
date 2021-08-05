@@ -2,10 +2,8 @@ class ProxyFactory {
   static create(object, props, action) {
     return new Proxy(object, {
       get(target, prop, receiver) {
-        // debugger;
         if (props.includes(prop) && ProxyFactory._isFunction(target[prop])) {
           return function () {
-            console.log(`interceptando ${prop}`);
             let response = Reflect.apply(target[prop], target, arguments);
 
             action(target);

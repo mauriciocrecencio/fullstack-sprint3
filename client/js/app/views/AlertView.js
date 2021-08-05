@@ -4,6 +4,7 @@ class AlertView extends View {
   }
 
   template(data) {
-    return data.message ? `<p class="alert">${data.message}</p>` : '<p></p>';
+    const { message } = data;
+    return message ? `<p class="alert">${message}</p>` : "<p></p>";
   }
 }

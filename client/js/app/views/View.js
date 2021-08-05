@@ -8,7 +8,6 @@ class View {
   }
 
   update(model) {
-    console.log("UPDATE");
     this._element.innerHTML = this.template(model);
   }
 }
